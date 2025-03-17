@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <meta name="description" content="CoDA" />
+    <meta property="og:title" content="CoDA" />
+    <meta
+      property="og:description"
+      content="Contrastive Visual Data Augmentation"
+    />
+    <meta property="og:url" content="URL OF THE WEBSITE" />
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+    <meta property="og:image" content="static/imgs/teaser.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:title" content="CoDA" />
+    <meta name="twitter:description" content="CoDA" />
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+    <meta name="twitter:image" content="static/imgs/teaser.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Keywords for your paper to be indexed by-->
+    <meta name="keywords" content="Contrastive Visual Data Augmentation" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Contrastive Visual Data Augmentation</title>
+    <link rel="icon" type="image/x-icon" href="static/imgs/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/bulma.min.css" />
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css" />
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+    />
+    <link rel="stylesheet" href="static/css/index.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                <span style="color: rgb(59, 93, 135)"
+                  >Contrastive Visual Data Augmentation</span
+                >
+              </h1>
+              <div class="is-size-5 publication-authors">
+                <!-- Paper authors -->
+                <span class="author-block">
+                  <a href="https://yu-bryan-zhou.github.io/" target="_blank"
+                    >Yu Zhou *</a
+                  ><span style="color: rgb(43, 118, 71)"><sup> 1</sup></span
+                  >,</span
+                >
+                <span class="author-block">
+                  <a href="https://bingxuanli.com" target="_blank"
+                    >Bingxuan Li *</a
+                  ><span style="color: rgb(43, 118, 71)"><sup> 1</sup></span
+                  >,</span
+                >
+                <span class="author-block">
+                  <a
+                    href="https://tangmohan.github.io/tangmohan.pdf"
+                    target="_blank"
+                    >Mohan Tang *</a
+                  ><span style="color: rgb(43, 118, 71)"><sup>1</sup></span>
+                  ,</span
+                >
+                <span class="author-block">
+                  <a
+                    href="https://scholar.google.com/citations?user=Jd_tsuEAAAAJ&hl=en"
+                    target="_blank"
+                    >Xiaomeng Jin</a
+                  ><span style="color: rgb(210, 42, 23)"><sup> 2</sup></span
+                  >,</span
+                >
+                <span class="author-block">
+                  <a href="https://telin0411.github.io/" target="_blank"
+                    >Te-Lin Wu</a
+                  ><span style="color: rgb(43, 118, 71)"><sup> 1</sup></span
+                  >,</span
+                >
+                <span class="author-block">
+                  <a href="https://khhuang.me/" target="_blank"
+                    >Kuan-Hao Huang</a
+                  ><span style="color: rgb(169, 177, 15)"><sup> 3</sup></span
+                  ><span style="color: rgb(210, 42, 23)"
+                    ><sup> 2</sup></span
+                  ></span
+                >
+                <br />
+                <span class="author-block">
+                  <a
+                    href="https://blender.cs.illinois.edu/hengji.html"
+                    target="_blank"
+                    >Heng Ji</a
+                  ><span style="color: rgb(210, 42, 23)"
+                    ><sup> 2</sup></span
+                  ></span
+                >
+                <span class="author-block">
+                  <a href="https://web.cs.ucla.edu/~kwchang/" target="_blank"
+                    >Kai-Wei Chang</a
+                  ><span style="color: rgb(43, 118, 71)"
+                    ><sup> 1</sup></span
+                  ></span
+                >
+                <span class="author-block">
+                  <a href="https://violetpeng.github.io" target="_blank"
+                    >Nanyun Peng</a
+                  ><span style="color: rgb(43, 118, 71)"
+                    ><sup> 1</sup></span
+                  ></span
+                >
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <!-- <span class="author-block"
+                  >Institution Name<br />Conferance name and year</span
+                > -->
+                <span class="author-block"
+                  ><span style="color: rgb(43, 118, 71)"><sup>1</sup></span
+                  >University of California, Los Angeles,
+                </span>
+                <span class="author-block"
+                  ><span style="color: rgb(210, 42, 23)"><sup>2</sup></span
+                  >University of Illinois at Urbana-Champaign,
+                </span>
+                <span class="author-block"
+                  ><span style="color: rgb(169, 177, 15)"><sup>3</sup></span
+                  >Texas A&M University
+                </span>
+                <span class="eql-cntrb"
+                  ><small
+                    ><br /><sup>*</sup>Indicates Equal Contribution</small
+                  ></span
+                >
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- ArXiv abstract Link -->
+                  <span class="link-block">
+                    <a
+                      href="https://arxiv.org/abs/2502.17709"
+                      target="_blank"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a
+                      href="https://github.com/visual-data-augmentation"
+                      target="_blank"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+
+                  <!-- Huggingface Dataset link -->
+                  <span class="link-block"
+                    ><a
+                      href="https://huggingface.co/datasets/visual_data_augmentation"
+                      target="_blank"
+                      class="external-link button is-normal is-rounded is-dark"
+                      ><span class="icon"><i class="fas fa-database"></i></span
+                      ><span>Data</span></a
+                    ></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Teaser -->
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div
+          class="hero-body"
+          style="display: flex; flex-direction: column; align-items: center"
+        >
+          <img
+            src="static/imgs/teaser.png"
+            alt="Teaser"
+            width="80%"
+            style="border-radius: 20px"
+          />
+          <br />
+          <br />
+          <h2 class="subtitle has-text-centered">
+            CoDA uses diffusion-generated synthetic data to help LMMs recognize
+            novel and confusing concepts in the wild. The “Clouded Tiger Cat (L.
+            pardinoides)” is a new animal species first described in April 2024,
+            while ”Resupply Base” is an example of a confusing concept for LMMs.
+            Based on model failures (collected from GPT4o-2024-08-06 and
+            LLaVA-NeXT 34B), CoDA extracts contrastive visual and textual
+            features to generate synthetic image data for model updating.
+          </h2>
+        </div>
+      </div>
+    </section>
+    <!-- End teaser -->
+
+    <!-- Paper abstract -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-11">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p class="is-size-5">
+                Large multimodal models (LMMs) often struggle to recognize novel
+                concepts, as they rely on pre-trained knowledge and have limited
+                ability to capture subtle visual details. Domain-specific
+                knowledge gaps in training also make them prone to confusing
+                visually similar, commonly misrepresented, or low-resource
+                concepts. To help LMMs better align nuanced visual features with
+                language, improving their ability to recognize and reason about
+                novel or rare concepts, we propose a Contrastive visual Data
+                Augmentation (CoDA) strategy. CoDA extracts key contrastive
+                textual and visual features of target concepts against the known
+                concepts they are misrecognized as, and then uses multimodal
+                generative models to produce targeted synthetic data. Automatic
+                filtering of extracted features and augmented images is
+                implemented to guarantee their quality, as verified by human
+                annotators. We show the effectiveness and efficiency of CoDA on
+                low-resource concept and diverse scene recognition datasets
+                including INaturalist and SUN. We additionally collect
+                NovelSpecies, a benchmark dataset consisting of newly discovered
+                animal species that are guaranteed to be unseen by LMMs.
+                LLaVA-1.6 1-shot updating results on these three datasets show
+                CoDA significantly improves SOTA visual data augmentation
+                strategies by 12.3% (NovelSpecies), 5.1% (SUN), and 6.0% (iNat)
+                absolute gains in accuracy
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End paper abstract -->
+
+    <!-- Paper Method -->
+    <section class="section hero">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-11">
+            <h2 class="title is-3">Method</h2>
+            <div class="content has-text-justified">
+              <img src="static/imgs/method.png" alt="Workflow" width="100%" />
+              <br />
+              <br />
+              <p class="is-size-5">
+                As shown in the figure, the CoDA method includes
+                <span style="color: rgb(23, 173, 210)">Feature Extraction</span
+                >,
+                <span style="color: rgb(23, 173, 210)">Feature Filtering</span>,
+                <span style="color: rgb(173, 23, 210)"
+                  >Feature-controlled Augmentation</span
+                >, and
+                <span style="color: rgb(173, 23, 210)"
+                  >Augmented Image Filtering</span
+                >. The
+                <span style="color: rgb(23, 210, 23)">target concept</span> and
+                <span style="color: rgb(237, 71, 16)"
+                  >misidentified concept</span
+                >
+                are highlighted respectively. Specific feature filtering scores
+                are for illustration only. Here the example concepts
+                Anodorhynchus Leari (Lear’s Macaw) and Cyanopsitta Spixii
+                (Spix’s Macaw) are from the iNaturalist dataset, and augmented
+                images are produced by the Recraft V3 model.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End paper method -->
+
+    <!-- Image carousel -->
+    <section class="hero is-light">
+      <div class="hero-body">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Experiment Results</h2>
+        </div>
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item">
+              <img
+                src="static/imgs/main_result.png"
+                alt="main_result"
+                width="60%"
+                style="
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  border-radius: 15px;
+                  border: 2px solid;
+                "
+              />
+              <h2
+                class="subtitle has-text-centered"
+                style="max-width: 90%; margin: 0 auto"
+              >
+                <br />
+                <b>[1/3] Main Experiment</b>:<br /><br />
+                This table demonstrates the main experiment results on
+                INaturalist, SUN, and NovelSpecies under Fixed Real Data and
+                Fixed Compute settings: Experiments are defined by the number of
+                Real:Synthetic images used. For example, 5:1 means the model
+                uses 5 real images and 1 synthetic image for each concept class
+                at training time. All results are in terms of LLaVA-1.6 34B
+                concept recognition accuracy (%). Best performance scores for
+                each setting and scores using all real data are highlighted in
+                Red and Green, respectively.
+              </h2>
+              <br />
+            </div>
+
+            <div class="item">
+              <img
+                src="static/imgs/novel_result.png"
+                alt="main_result"
+                width="80%"
+                style="
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  border-radius: 15px;
+                  border: 2px solid;
+                "
+              />
+              <h2
+                class="subtitle has-text-centered"
+                style="max-width: 90%; margin: 0 auto"
+              >
+                <br />
+                <b>[2/3] Novel Dataset Experiment</b>:<br /><br />
+                We focus on NovelSpecies as it most closely resembles real-world
+                scenarios, where over time, models are required to learn novel
+                concepts without access to sufficient real training data.
+                Experiments on NovelSpecies with open-weight VLM (LLaVA-NeXT),
+                proprietary LMM (GPT4o-mini), and traditional classifier (ViT)
+                under the Fixed Real Data setting. Results are in terms of
+                accuracy (%). Synthetic image data generated by Recraft V3. Best
+                performance scores for each setting and scores using all real
+                data are highlighted in Red and Green, respectively.
+              </h2>
+              <br />
+            </div>
+
+            <div class="item">
+              <img
+                src="static/imgs/human_eval.png"
+                alt="main_result"
+                width="60%"
+                style="
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  border-radius: 15px;
+                  border: 2px solid;
+                "
+              />
+              <h2
+                class="subtitle has-text-centered"
+                style="max-width: 80%; margin: 0 auto"
+              >
+                <br />
+                <b>[3/3] Human Evaluation</b>:<br /><br />We observe that
+                explicitly separating different modalities during the critique
+                process—such as visual evaluation and code
+                analysis—substantially enhances the multimodal self- correction
+                capabilities of VLMs. Ablation study shows that METAL with the
+                separate-critique design achieves a 5.6% improvement over the
+                single-critique baseline (METAL_S).
+              </h2>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End image carousel -->
+
+    <!-- Paper Case Study -->
+    <section class="section hero">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-11">
+            <h2 class="title is-3">Qualitative Comparison</h2>
+            <div
+              class="content has-text-justified"
+              style="display: flex; flex-direction: column; align-items: center"
+            >
+              <img
+                src="static/imgs/examples.png"
+                alt="CaseStudy"
+                width="80%"
+                style="border-radius: 20px"
+              />
+              <br />
+              <br />
+              <p class="is-size-5">
+                Phyllobates Samperi is a new species of hypertoxic poison dart
+                frog first described in 2024, currently it does not have a
+                common name, the concept is an example from the NovelSpecies
+                datase. The image on the left is the original image of the frog,
+                while the image on the right is the augmented image generated by
+                CoDA and baselines.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End paper case study -->
+
+    <!--BibTex citation -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@article{zhou2025contrastive,
+          title={Contrastive Visual Data Augmentation},
+          author={Zhou, Yu and Li, Bingxuan and Tang, Mohan and Jin, Xiaomeng and Wu, Te-Lin and Huang, Kuan-Hao and Ji, Heng and Chang, Kai-Wei and Peng, Nanyun},
+          journal={arXiv preprint arXiv:2502.17709},
+          year={2025}
+        } 
+    </code></pre>
+      </div>
+    </section>
+    <!--End BibTex citation -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                This page was built using the
+                <a
+                  href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                  target="_blank"
+                  >Academic Project Page Template</a
+                >
+                which was adopted from the <a
+                  href="https://nerfies.github.io"
+                  target="_blank"
+                  >Nerfies</a
+                > project page.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Statcounter tracking code -->
+
+    <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+  </body>
+</html>
